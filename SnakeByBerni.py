@@ -112,7 +112,7 @@ while Running:
             Running = False
     
     fps = str(int(clock.get_fps()))
-    pygame.display.set_caption(f"Snake v.0.3 by Berni | Snake Lenght: {len(Snake_Segments)} | " + Pause_text) # Window name + fps + + points + coordinates
+    pygame.display.set_caption(f"Snake v.0.3 by Berni | Snake Lenght: {len(Snake_Segments)} | " + Pause_text) # Window name + Snake Lenght
 
     keys = pygame.key.get_pressed()
 
@@ -161,8 +161,9 @@ while Running:
 
         points_on_grid()
         draw()
-
-        points_text = font.render(f"Points {Points} / 400 \n\nx:{Player_X + 1}, y:{Player_Y + 1} \nFPS: {fps} / 11 \n\nkeys: w a s d \nP - Pause", True, "white") # Displays points
+        
+        # Displays points + coordinates + fps + keys
+        points_text = font.render(f"Points {Points} / 400 \n\nx:{Player_X + 1}, y:{Player_Y + 1} \nFPS: {fps} / 11 \n\nkeys: w a s d \nP - Pause", True, "white")
         window.blit(points_text, (465, 10))
     
 
